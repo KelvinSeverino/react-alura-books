@@ -1,21 +1,14 @@
 import styled from 'styled-components';
+import { Title } from '../Title';
 import { books } from './searchLastReleases'
+import imageBook from '../../images/angular.svg'
+import RecommendationCard from '../RecommendationCard';
 
 const LastReleasesContainer = styled.section`
     background-color: #EBECEE;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-`
-
-const Title = styled.h2`
-    width: 100%;
-    padding: 30px 0;
-    background-color: #FFF;
-    color: #EB9B00;
-    font-size: 36px;
-    text-align: center;
-    margin: 0;
 `
 
 const NewBooksContainer = styled.div`
@@ -29,14 +22,20 @@ const NewBooksContainer = styled.div`
 function LastReleases(){
     return (
         <LastReleasesContainer>
-            <Title>ULTIMOS LANCAMENTOS</Title>
+            <Title color='#EB9B00' fontSize="36px">ÚLTIMOS LANÇAMENTOS</Title>
             <NewBooksContainer>
                 { books.map( book => (
                     <div key={book.id}>
                         <img src={book.src} alt='bookImg'/>
                     </div>
                 ) ) }
-            </NewBooksContainer>
+            </NewBooksContainer>            
+            <RecommendationCard 
+                title="Talvez você se interesse por"
+                subtitle="Angular 11"
+                description="Construindo uma aplicação com a plataforma Google"
+                img={imageBook}
+            />
         </LastReleasesContainer>
     );
 }
