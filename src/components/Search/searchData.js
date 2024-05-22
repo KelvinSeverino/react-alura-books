@@ -1,4 +1,4 @@
-import book from '../../images/livro.png'
+import book from '../../images/livro1.svg'
 
 export const books = [
     {name: 'Liderança em Design', id: 1, src:book },
