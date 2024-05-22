@@ -5,7 +5,7 @@ const OptionsContainer = styled.ul`
 `
 
 const Option = styled.li`
-    ont-size: 16px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,11 +21,11 @@ function OptionsHeader() {
 
     return (
         <OptionsContainer>
-            { options.map ( (text) => (
-                <Option><p>{text}</p></Option>
-            ) ) }
+            {options.map((text, index) => (
+                <Option key={index}><p>{text}</p></Option>
+            ))}
         </OptionsContainer>
     );
 }
 
-export default OptionsHeader
+export default OptionsHeader;
