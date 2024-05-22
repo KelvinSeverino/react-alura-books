@@ -1,14 +1,30 @@
-import './style.css';
+import styled from 'styled-components';
+
+const OptionsContainer = styled.ul`
+    display: flex;
+`
+
+const Option = styled.li`
+    ont-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+    min-width: 120px;
+`
 
 function OptionsHeader() {    
     const options = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
 
     return (
-        <ul className='options'>
+        <OptionsContainer>
             { options.map ( (text) => (
-                <li className='option'><p>{text}</p></li>
+                <Option><p>{text}</p></Option>
             ) ) }
-        </ul>
+        </OptionsContainer>
     );
 }
 
