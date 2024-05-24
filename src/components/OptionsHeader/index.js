@@ -23,7 +23,7 @@ function OptionsHeader() {
     return (
         <OptionsContainer>
             {options.map((text, index) => (
-                <Link to={`/${text.toLowerCase()}`}><Option key={index}><p>{text}</p></Option></Link>
+                <Link to={`/${text.toLowerCase()}`} key={index}><Option key={index}><p>{text}</p></Option></Link>
             ))}
         </OptionsContainer>
     );
