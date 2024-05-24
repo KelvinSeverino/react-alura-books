@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Input from '../Input'
 import { useEffect, useState } from 'react';
 import { getBooks } from '../../services/books';
+import { storeFavorite } from '../../services/favorites';
 
 
 const SearchContainer = styled.section`
@@ -56,6 +57,11 @@ function Search(){
         setBooks(booksAPI)
     }
 
+    async function insertFavorite(id) {
+        await storeFavorite(id)
+        alert(`Livro de ${id} inserido!`)
+    }
+
     return (
         <SearchContainer>
             <Title>Já sabe por onde começar?</Title>
@@ -69,7 +75,7 @@ function Search(){
                 }}
             />
             { booksSearched.map(book => (
-                <Result key={book.id}>
+                <Result key={book.id} onClick={() => insertFavorite(book.id)}>
                     <img src={book.src} alt='bookImg'/>
                     <p>{book.name}</p>
                 </Result>

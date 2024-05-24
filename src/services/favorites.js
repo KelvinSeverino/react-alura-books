@@ -11,6 +11,16 @@ async function getFavorites() {
     }
 }
 
+async function storeFavorite(id) {
+    await favoritesAPI.post(`/${id}`)
+}
+
+async function destroyFavorite(id) {
+    await favoritesAPI.delete(`/${id}`)
+}
+
 export {
     getFavorites,
+    storeFavorite,
+    destroyFavorite,
 }
